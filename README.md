@@ -6,6 +6,26 @@
 
 这个项目是我自己的学习记录与笔记…  如果想学vue请异步官方文档，那里有更多更详细的介绍
 
+---
+
+## VueConf2017 - 腾讯视频
+
+<a href="https://v.qq.com/x/page/s0506yc3u0e.html" target="_blank">Vue.js2017现状与展望 - 尤雨溪</a>
+
+<a href="https://v.qq.com/x/page/u0506jusvj1.html" target="_blank">Vue SSR和API Proxy层深层实践 - 桑世龙</a>
+
+<a href="https://v.qq.com/x/page/f0507vc8192.html" target="_blank">Vue在饿了么的应用 - 李清伟</a>
+
+<a href="https://v.qq.com/x/page/u0507s08mrp.html" target="_blank">Vue.js2.0后端渲染及重构实践 - 掘金</a>
+
+<a href="https://v.qq.com/x/page/f0507l0g81o.html" target="_blank">用Vue Vuex构建超大Web应用</a>
+
+<a href="https://v.qq.com/x/page/b0507sqf14d.html" target="_blank">用比较性思维谈工程化在Vue.js的优雅设计</a>
+
+<a href="https://v.qq.com/x/page/t0507cm9bar.html" target="_blank">当Weex遇上Vue.js2.0</a>
+
+---
+
 下面是目录结构
 
 ### 基础篇  
@@ -36,3 +56,4 @@
 7. 插件
 8. 路由
 9. 构建项目
+
