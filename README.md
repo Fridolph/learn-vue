@@ -8,6 +8,10 @@
 
 ---
 
+## VueConf2017 - 知乎整理
+
+https://zhuanlan.zhihu.com/p/27095406?refer=FrontendMagazine ps下面的就不用看了…
+
 ## VueConf2017 - 腾讯视频
 
 <a href="https://v.qq.com/x/page/s0506yc3u0e.html" target="_blank">Vue.js2017现状与展望 - 尤雨溪</a>
