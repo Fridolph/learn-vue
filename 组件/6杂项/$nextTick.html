@@ -21,8 +21,10 @@
     methods: {
       getText() {
         this.showDiv = true
-        var text = document.getElementById('div').innerHTML
-        console.log(text)
+        this.$nextTick(() => {
+          var text = document.getElementById('div').innerHTML
+          console.log(text)
+        })
       }
     }
   })
