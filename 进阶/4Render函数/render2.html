@@ -83,6 +83,7 @@ Vue.component('anchor', {
       default: ''
     }
   },
+  // render函数通过 createElement 参数来创建Virtual DOM，结构精简了许多
   render(createElement) {
     return createElement(
       'h' + this.level,
@@ -104,6 +105,7 @@ Vue.component('anchor', {
 var app = new Vue({
   el: "#app"
 })
+
 </script>
 </body>
 </html>

@@ -353,3 +353,14 @@ craeteElement(
   })
 </script>
 ```
+
+对于事件修饰符和按键修饰符，基本也需要自己实现：
+
+.stop         event.stopPropagation()
+.prevent      event.preventDefault()
+.self         if (event.target !== event.currentTarget) return
+.enter .13    if (event.keyCode !== 13) return
+.ctrl .alt 
+.shift .meta  if (!event.ctrlKey) return ...
+
+
