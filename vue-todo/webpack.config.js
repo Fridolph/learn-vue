@@ -12,6 +12,9 @@ const config = {
     filename: 'bundle.[hash:8].js',
     path: path.join(__dirname, 'dist')
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.vue']
+  },
   module: {
     rules: [
       {
