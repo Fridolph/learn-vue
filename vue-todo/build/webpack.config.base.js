@@ -1,6 +1,6 @@
 const path = require('path')
-const webpack = require('webpack')
-const createVueLoaderOpts = require('./vue-loader.config').default
+// const webpack = require('webpack')
+const createVueLoaderOpts = require('./vue-loader.config')
 
 const isDev = process.env.NODE_ENV === 'development'
 

@@ -29,7 +29,7 @@ import Item from './item'
 import Tabs from './tabs'
 let id = 0
 export default {
-  data() {
+  data () {
     return {
       todos: [],
       filter: 'all'
@@ -37,10 +37,10 @@ export default {
   },
   components: {
     Item,
-    Tabs,
+    Tabs
   },
   computed: {
-    filteredTodos() {
+    filteredTodos () {
       if (this.filter === 'all') {
         return this.todos
       }
@@ -49,8 +49,8 @@ export default {
     }
   },
   methods: {
-    addTodo(e) {
-      if (!e.target.value) return 
+    addTodo (e) {
+      if (!e.target.value) return
       this.todos.unshift({
         id: id++,
         content: e.target.value.trim(),
@@ -58,13 +58,13 @@ export default {
       })
       e.target.value = ''
     },
-    deleteTodo(id) {
+    deleteTodo (id) {
       this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)
     },
-    toggleFilter(state) {
+    toggleFilter (state) {
       this.filter = state
     },
-    clearAllCompleted() {
+    clearAllCompleted () {
       this.todos = this.todos.filter(todo => !todo.completed)
     }
   }
@@ -74,7 +74,7 @@ export default {
 <style lang="stylus" scoped>
 .real-app
   width: 90%
-  max-width: 600px  
+  max-width: 600px
   margin 0 auto
   box-shadow 0 0 5px #666
 
@@ -98,7 +98,7 @@ export default {
   border none;
   box-shadow inset 0 -2px 1px rgba(0,0,0,0.03);
 
-.todo-list-wrapper 
+.todo-list-wrapper
   max-height: 328px
   overflow: hidden
   overflow-y: auto

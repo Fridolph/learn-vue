@@ -9,12 +9,12 @@ const isDev = process.env.NODE_ENV === 'development'
 let config
 
 const devServer = {
-  port: 8000,
+  port: 8080,
   host: 'localhost',
   hot: true,
   open: true,
   overlay: {
-    errors: true,
+    errors: true
   }
 }
 
@@ -32,7 +32,7 @@ const defaultPlugins = [
 if (isDev) {
   config = merge(baseConfig, {
     output: {
-      filename: 'bundle.[hash:8].js',
+      filename: 'bundle.[hash:8].js'
     },
     module: {
       rules: [
@@ -44,13 +44,13 @@ if (isDev) {
               loader: 'css-loader',
               options: {
                 module: true, // 开启CSS Module
-                localIdentName: isDev ? '[name]-[hash:base64:4]' : ['hash:base64:6'], 
+                localIdentName: isDev ? '[name]-[hash:base64:4]' : ['hash:base64:6']
               }
             },
             {
               loader: 'postcss-loader',
               options: {
-                sourceMap: true,
+                sourceMap: true
               }
             },
             'stylus-loader'
@@ -71,8 +71,8 @@ if (isDev) {
       app: path.join(__dirname, '../src/index.js'),
       vendor: ['vue']
     },
-    output: {      
-      filename: '[name].[chunkhash:8].js',
+    output: {
+      filename: '[name].[chunkhash:8].js'
     },
     rules: [
       {
@@ -82,7 +82,7 @@ if (isDev) {
           use: [
             'css-loader',
             {
-              loader: 'postcss-loader',
+              loader: 'postcss-loader'
               // options: {
               //   sourceMap: true,
               // }

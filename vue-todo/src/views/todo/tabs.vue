@@ -20,28 +20,28 @@ export default {
   props: {
     filter: {
       type: String,
-      required: true,
+      required: true
     },
     todos: {
       type: Array,
-      required: true,
+      required: true
     }
   },
-  data() {
+  data () {
     return {
       states: ['all', 'active', 'completed']
     }
   },
   computed: {
-    unFinishedTodoLength() {
+    unFinishedTodoLength () {
       return this.todos.filter(todo => !todo.completed).length
     }
   },
   methods: {
-    clearAllCompleted() {
+    clearAllCompleted () {
       this.$emit('clearAllCompleted')
     },
-    toggleFilter(state) {
+    toggleFilter (state) {
       this.$emit('toggle', state)
     }
   }
@@ -88,7 +88,7 @@ export default {
     width: 100%;
     margin-bottom: 10px;
   }
-} 
+}
 
 @media screen and (min-width: 801px) and (max-width: 2560px){
   .helper {
@@ -106,7 +106,7 @@ export default {
       text-align left
       width: 150px
     }
-  }  
+  }
 
   .left, .clear, .tabs {
     padding 0 10px
@@ -125,7 +125,7 @@ export default {
     text-align right
     cursor pointer
   }
-}  
+}
 </style>
 
 

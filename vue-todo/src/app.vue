@@ -12,13 +12,11 @@ import Header from './layouts/header'
 import Footer from './layouts/footer'
 import Todo from './views/todo/todo'
 
-// console.log(Header.__docs)
-
 export default {
   components: {
     Header,
     Footer,
-    Todo,
+    Todo
   }
 }
 </script>
