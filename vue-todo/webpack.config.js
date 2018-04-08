@@ -64,7 +64,7 @@ if (isDev) {
       {
         loader: 'postcss-loader',
         options: {
-          sourceMap: true,
+          sourceMap: true
         }
       },
       'stylus-loader'
@@ -76,7 +76,7 @@ if (isDev) {
     host: 'localhost',
     open: true,
     overlay: {
-      errors: true,
+      errors: true
     },
     hot: true
   }
@@ -100,13 +100,13 @@ if (isDev) {
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: true,
+              sourceMap: true
             }
           },
           'stylus-loader'
         ]
       })
-    },
+    }
   )
   config.plugins.push(
     new ExtractPlugin('styles.[contenthash:8].css'),

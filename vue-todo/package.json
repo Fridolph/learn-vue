@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "precommmit": "npm run eslint-fix",
+    "practise": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.practise.js",
     "build:client": "cross-env NODE_ENV=production webpack --config ./build/webpack.config.client.js",
     "build": "npm run clean && npm run build:client",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.client.js",
