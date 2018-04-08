@@ -7,12 +7,14 @@
       placeholder="entry what want to do"
       @keyup.enter="addTodo"
     >
-    <item
-      :todo="todo"
-      v-for="todo in filteredTodos"
-      :key="todo.id"
-      @del="deleteTodo"
-    />
+    <div class="todo-list-wrapper">
+      <item
+        :todo="todo"
+        v-for="todo in filteredTodos"
+        :key="todo.id"
+        @del="deleteTodo"
+      />
+    </div>
     <tabs
       :filter="filter"
       :todos="todos"
@@ -48,6 +50,7 @@ export default {
   },
   methods: {
     addTodo(e) {
+      if (!e.target.value) return 
       this.todos.unshift({
         id: id++,
         content: e.target.value.trim(),
@@ -70,7 +73,8 @@ export default {
 
 <style lang="stylus" scoped>
 .real-app
-  width 600px
+  width: 90%
+  max-width: 600px  
   margin 0 auto
   box-shadow 0 0 5px #666
 
@@ -93,6 +97,11 @@ export default {
   padding 16px 16px 16px 60px;
   border none;
   box-shadow inset 0 -2px 1px rgba(0,0,0,0.03);
+
+.todo-list-wrapper 
+  max-height: 328px
+  overflow: hidden
+  overflow-y: auto
 
 </style>
 

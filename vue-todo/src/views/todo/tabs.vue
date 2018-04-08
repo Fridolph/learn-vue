@@ -49,45 +49,83 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.helper{
+.helper
   font-weight 100
   display flex
+  flex-wrap wrap
   justify-content space-between
   padding 5px 0
   line-height 30px
   background-color #fff
   font-size 14px
   font-smoothing: antialiased
-}
-.left, .clear, .tabs{
+
+.left, .clear, .tabs
   padding 0 10px
   box-sizing border-box
-}
-.left, .clear{
-  width 150px
-}
-.left{
+
+.left
   text-align left
-}
-.clear{
+
+.tabs
+  flex: 0 0 60%
+  max-width: 240px
+  display: flex
+  justify-content: space-between
+  span
+    padding: 0 6px
+    border-radius: 4px
+    border: 1px solid transparent
+  .actived
+    border: 1px solid skyblue
+
+.clear
   text-align right
   cursor pointer
-}
-.tabs{
-  width 200px
-  display flex
-  justify-content space-around
-  * {
-    display inline-block
-    padding 0 10px
-    cursor pointer
-    border 1px solid rgba(175,47,47,0)
-    &.actived{
-      border-color rgba(175,47,47,0.4)
-      border-radius 5px
-    }
+
+@media screen and (max-width: 800px) {
+  .left {
+    width: 100%;
+    margin-bottom: 10px;
   }
-}
+} 
+
+@media screen and (min-width: 801px) and (max-width: 2560px){
+  .helper {
+    font-weight 100
+    display flex
+    flex-wrap: nowrap
+    justify-content space-between
+    padding 5px 0
+    line-height 30px
+    background-color #fff
+    font-size 14px
+    font-smoothing: antialiased
+
+    .left {
+      text-align left
+      width: 150px
+    }
+  }  
+
+  .left, .clear, .tabs {
+    padding 0 10px
+    box-sizing border-box
+  }
+
+  .left, .clear {
+    width 150px
+  }
+
+  .left {
+    text-align left
+  }
+
+  .clear {
+    text-align right
+    cursor pointer
+  }
+}  
 </style>
 
 

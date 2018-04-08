@@ -2,6 +2,7 @@ const path = require('path')
 const HTMLPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const ExtractPlugin = require('extract-text-webpack-plugin')
+const vueLoaderOpts = require('./build/vue-loader.config').default.default
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -19,7 +20,8 @@ const config = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: vueLoaderOpts(isDev)
       },
       {
         test: /\.jsx$/,
@@ -32,7 +34,7 @@ const config = {
             loader: 'url-loader',
             options: {
               limit: 1024,
-              name: '[name]-[contentHash:8].[ext]'
+              name: '[name].[contenthash:8].[ext]'
             }
           }
         ]
@@ -45,7 +47,11 @@ const config = {
         NODE_ENV: isDev ? '"development"' : '"production"'
       }
     }),
-    new HTMLPlugin()
+    new HTMLPlugin({
+      filename: 'index.html',
+      template: 'index.html',
+      inject: true
+    })
   ]
 }
 
@@ -67,7 +73,8 @@ if (isDev) {
   config.devtool = '#cheap-module-eval-source-map'
   config.devServer = {
     port: 8000,
-    host: '0.0.0.0',
+    host: 'localhost',
+    open: true,
     overlay: {
       errors: true,
     },
@@ -86,7 +93,7 @@ if (isDev) {
   config.module.rules.push(
     {
       test: /\.styl/,
-      use: ExtractPlugin.extract({
+      use: new ExtractPlugin.extract({
         fallback: 'style-loader',
         use: [
           'css-loader',
@@ -102,7 +109,7 @@ if (isDev) {
     },
   )
   config.plugins.push(
-    new ExtractPlugin('styles.[contentHash:8].css'),
+    new ExtractPlugin('styles.[contenthash:8].css'),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
     }),
