@@ -5,6 +5,7 @@ const createVueLoaderOpts = require('./vue-loader.config')
 const isDev = process.env.NODE_ENV === 'development'
 
 const baseConfig = {
+  mode: process.env.NODE_ENV || 'production', // 只接受 development 或 production
   target: 'web',
   entry: path.join(__dirname, '../src/index.js'),
   output: {
