@@ -15,6 +15,9 @@ const devServer = {
   open: true,
   overlay: {
     errors: true
+  },
+  historyApiFallback: {
+    index: '/index.html'
   }
 }
 
@@ -25,7 +28,7 @@ const defaultPlugins = [
     }
   }),
   new HtmlWebpackPlugin({
-    app: '../index.html'
+    template: path.join(__dirname, 'template.html')
   })
 ]
 

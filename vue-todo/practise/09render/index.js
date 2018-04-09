@@ -18,7 +18,10 @@ const Child = {
     return createElement(
       'div',
       {
-        style: this.style
+        style: this.style,
+        on: {
+          click: () => this.$emit('click')
+        }
       },
       this.$slots.default,
       this.prop1
@@ -45,6 +48,9 @@ new Vue({
         ref: 'comp',
         props: {
           prop1: this.value
+        },
+        on: {
+          click: this.handleClick
         }
       },
       [
