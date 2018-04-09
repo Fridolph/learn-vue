@@ -1,6 +1,8 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 
-new Vue({
-  el: '#root',
-  template: `<div>你好吗</div>`
-})
+// new Vue({
+//   el: '#root',
+//   template: `<div>你好吗</div>`
+// })
+
+import './09render'
