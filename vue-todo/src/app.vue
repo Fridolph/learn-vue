@@ -15,13 +15,16 @@
 <script>
 import Header from './layouts/header'
 import Footer from './layouts/footer'
-// import Todo from './views/todo/todo'
+import Todo from './views/todo/todo'
 
 export default {
+  metaInfo: {
+    title: 'The Todo App'
+  },
   components: {
     Header,
     Footer,
-    // Todo
+    Todo
   }
 }
 </script>

@@ -6,7 +6,7 @@ const baseConfig = require('./webpack.config.base')
 
 const devServer = {
   port: 8081,
-  host: 'localhost',
+  host: 'http://127.0.0.1',
   hot: true,
   open: true,
   overlay: {
