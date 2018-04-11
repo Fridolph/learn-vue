@@ -1,31 +1,31 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from '../app'
-import Bar from '../components/Bar'
-import Baz from '../components/Baz'
-import Foo from '../components/Foo'
+// import App from '../app'
+// import Bar from '../components/Bar'
+// import Baz from '../components/Baz'
+// import Foo from '../components/Foo'
 
 Vue.use(VueRouter)
 
-export const craeteRouter = () => {
+export function createRouter() {
   return new VueRouter({
     mode: 'history',
     routes: [
       {
         path: '/',
-        comopnent: App
+        comopnent: () => import('../app')
       },
       {
         path: '/foo',
-        component: Foo
+        component: () => import('../components/Foo')
       },
       {
         path: '/bar',
-        component: Bar
+        component: () => import('../components/Bar')
       },
       {
         path: '/baz',
-        component: Baz
+        component: () => import('../components/Baz')
       },
     ]
   })

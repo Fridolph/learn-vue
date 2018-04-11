@@ -1,18 +1,22 @@
-const webpack = requrie('webpack')
+const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = {
+  mode: isDev ? 'development' : 'production',
   entry: {
-    app: './src/main.js'
+    client: './src/entry.client.js',
+    server: './src/entry.server.js'
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].bundle.[hash:8].js',
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'source-map',
   resolve: {
-    extentions: ['.js', '.jsx', '.vue']
+    extensions: ['.js', '.json', '.vue']
   },
   module: {
     rules: [
@@ -46,8 +50,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
-      filename: './index.html',
-      template: './index.html',
+      filename: 'index.html',
+      template: 'index.html',
       inject: true
     })
   ]
