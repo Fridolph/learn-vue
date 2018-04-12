@@ -6,7 +6,8 @@
     ".eslintrc",
     "client",
     "build/webpack.config.client.js",
-    "public"
+    "public",
+    "备份/**"
   ],
   "verbose": true,
   "env": {

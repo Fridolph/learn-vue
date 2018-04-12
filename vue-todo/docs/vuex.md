@@ -1,3 +1,22 @@
+全局事件订阅， bus
+
+```js
+// utils/bus.js
+import Vue from 'vue'
+export default new Vue()
+// store/actions.js
+import bus from '../utils/bus.js'
+bus.$emit('auth') // 通过全局的bus触发事件
+// client-entry.js
+import bus from '../utils/bus.js'
+bus.$on('auth', () => {
+  router.push('/login')
+})
+// 这样就实现了 受保护路由
+```
+
+---
+
 getters相当于vuex里的computed 用于数据缓存 在组件中的复用中可解耦提到这层
 
 mutations里的修改是同步的

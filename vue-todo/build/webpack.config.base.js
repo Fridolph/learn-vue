@@ -1,39 +1,37 @@
 const path = require('path')
-// const webpack = require('webpack')
-const createVueLoaderOpts = require('./vue-loader.config')
+const createVueLoaderOptions = require('./vue-loader.config')
 
 const isDev = process.env.NODE_ENV === 'development'
 
-const baseConfig = {
-  mode: process.env.NODE_ENV || 'production', // 只接受 development 或 production
+const config = {
   target: 'web',
-  entry: path.join(__dirname, '../src/client-entry.js'),
+  entry: path.join(__dirname, '../client/client-entry.js'),
   output: {
+    filename: 'bundle.[hash:8].js',
     path: path.join(__dirname, '../public'),
-    filename: '[name].[hash:8].js',
-    publicPath: 'http://127.0.0.1:8080/public/'
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.vue']
+    publicPath: 'http://127.0.0.1:7001/public/'
   },
   module: {
     rules: [
-      // 配置eslint
       {
         test: /\.(vue|js|jsx)$/,
         loader: 'eslint-loader',
         exclude: /node_modules/,
-        enforce: 'pre' // 预处理
+        enforce: 'pre'
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: createVueLoaderOpts(isDev)
+        options: createVueLoaderOptions(isDev)
       },
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
+        test: /\.jsx$/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.(gif|jpg|jpeg|png|svg)$/,
@@ -42,7 +40,7 @@ const baseConfig = {
             loader: 'url-loader',
             options: {
               limit: 1024,
-              name: '[name].[hash:8].[ext]'
+              name: 'resources/[path][name].[hash:8].[ext]'
             }
           }
         ]
@@ -51,4 +49,4 @@ const baseConfig = {
   }
 }
 
-module.exports = baseConfig
+module.exports = config
