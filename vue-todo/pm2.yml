@@ -5,3 +5,4 @@ apps:
       NODE_ENV: production
       HOST: localhost
       PORT: 7000
+ 

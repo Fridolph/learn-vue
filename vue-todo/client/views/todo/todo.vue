@@ -12,13 +12,15 @@
       placeholder="接下去要做什么？"
       @keyup.enter="handleAdd"
     >
-    <item
-      :todo="todo"
-      v-for="todo in filteredTodos"
-      :key="todo.id"
-      @del="deleteTodo"
-      @toggle="toggleTodoState"
-    />
+    <div class="list-wrapper">
+      <item
+        :todo="todo"
+        v-for="todo in filteredTodos"
+        :key="todo.id"
+        @del="deleteTodo"
+        @toggle="toggleTodoState"
+      />
+    </div>
     <helper
       :filter="filter"
       :todos="todos"
@@ -134,7 +136,8 @@ export default {
 
 <style lang="stylus" scoped>
 .real-app{
-  width 600px
+  width: 90%
+  max-width: 600px;
   margin 0 auto
   box-shadow 0 0 5px #666
 }
@@ -158,9 +161,21 @@ export default {
   border: none;
   box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
 }
+.list-wrapper 
+  height: 40vh
+  overflow: hidden
+  overflow-y: auto
+  background: #fff
+
 .tab-container
   background-color #fff
   padding 0 15px
+
+@media screen and (max-width: 374px) {
+  .list-wrapper {
+    max-height: 260px;
+  }
+}
 </style>
 
 

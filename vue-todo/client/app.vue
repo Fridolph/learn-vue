@@ -103,23 +103,27 @@ export default {
 <style lang="stylus" scoped>
 #app{
   position absolute
-  left 0
-  right 0
-  top 0
-  bottom 0
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  width: 100%
+  height: 100%
 }
 #cover{
-  position absolute
-  left 0
-  top 0
-  right 0
-  bottom 0
-  background-color #999
-  opacity .9
-  z-index -1
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  background-color: #999
+  opacity: .9
+  z-index: -1
 }
 #loading{
   position fixed
+  width: 100%
+  height: 100%
   top 0
   right 0
   bottom 0

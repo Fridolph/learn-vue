@@ -5,14 +5,14 @@
 </template>
 
 <style lang="stylus" module>
-.main-header{
+.main-header
   text-align center
-  h1{
-    font-size 100px
-    color: rgba(175, 47, 47, 0.4)
+
+  h1
+    font-size 60px
+    color: rgba(25, 77, 237, 0.6)
     font-weight 100
     margin 20px
-  }
-}
+  
 </style>
 
