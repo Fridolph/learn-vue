@@ -9,9 +9,8 @@ const {
 } = cdnConfig
 
 const mac = new qiniu.auth.digest.Mac(ak, sk)
-
 const config = new qiniu.conf.Config()
-config.zone = qiniu.zone.Zone_z0
+config.zone = qiniu.zone.Zone_z2
 
 const doUpload = (key, file) => {
   const options = {
