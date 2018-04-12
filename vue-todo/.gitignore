@@ -1,4 +1,6 @@
 node_modules
 public
-public
 server-build
+.vscode
+dist
+备份

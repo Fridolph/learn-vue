@@ -7,11 +7,11 @@
     "client",
     "build/webpack.config.client.js",
     "public",
-    "备份/**"
+    "server-build"
   ],
   "verbose": true,
   "env": {
     "NODE_ENV": "development"
   },
-  "ext": "js json ejs jsx"
+  "ext": "js json ejs"
 }

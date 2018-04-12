@@ -7,7 +7,7 @@ const handleError = (err) => {
   // handle error
   if (err.code === 401) {
     notify({
-      content: '请先登录'
+      content: '你得先登录啊！'
     })
     bus.$emit('auth')
   }
