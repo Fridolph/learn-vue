@@ -1,64 +1,198 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        nuxt-demo
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+  <section>
+    <SlideShow :bglist="bglist" />
+    <div id="container" class="box-container">
+      <div class="container-inner">
+        <div class="inner-header">
+          <div class="title">
+            <h1>Fridolph的个人网站</h1>
+            <sub>Fridolph's Personal Website</sub>
+          </div>
+        </div>
+        <div class="inner-content">
+          <ul class="list">
+            <li class="list-item item-1">
+              <a href="https://github.com/fridolph">» github</a>
+            </li>
+            <li class="list-item item-2">
+              <a href="https://fridolph.github.io">» Blog</a>
+            </li>
+            <li class="list-item item-3">
+              <div class="box">
+                <a href="#" class="layer">» Program</a>
+                <div class="over-layer">
+                  <a href="#">» Program</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="inner-footer">
+          Contact | fridolph.top
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import SlideShow from '../components/SlideShow'
 
 export default {
   components: {
-    AppLogo
+    SlideShow
+  },
+  data() {
+    return {
+      bglist: [
+        { src: 'http://blog.fueson.top/bg/op.jpg?imageView2/1/w/1280/h/795/format/jpg/interlace/1/q/70' },
+        { src: 'http://blog.fueson.top/bg/saber2.jpg?imageView2/1/w/1280/h/795/format/jpg/interlace/1/q/70' },
+        { src: 'http://blog.fueson.top/bg/acher.jpg?imageView2/1/w/1280/h/795/format/jpg/interlace/1/q/70' },
+        // { src: 'http://blog.fueson.top/bg/naruto.jpg?imageView2/1/w/1280/h/795/format/jpg/interlace/1/q/70' },
+        // { src: 'http://blog.fueson.top/bg/gintoki.jpg?imageView2/1/w/1280/h/795/format/jpg/interlace/1/q/70' },
+        { src: 'http://blog.fueson.top/bg/fairy.jpg?imageView2/1/w/1280/h/795/format/jpg/interlace/1/q/70' },
+        // { src: 'http://blog.fueson.top/bg/fire.jpg?imageView2/1/w/1280/h/795/format/jpg/interlace/1/q/70' },
+        // { src: 'http://blog.fueson.top/bg/geass.jpg?imageView2/1/w/1280/h/795/format/jpg/interlace/1/q/70' },
+        // { src: 'http://blog.fueson.top/bg/gate.jpg?imageView2/1/w/1280/h/795/format/jpg/interlace/1/q/70' },
+        // { src: 'http://blog.fueson.top/bg/titan.jpg?imageView2/1/w/1280/h/795/format/jpg/interlace/1/q/70' }
+      ]
+    }
   }
 }
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
+.box-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  color: #fefefe;
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  height: 300px;
+  width: 90vw;
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+  padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+.box-container .container-inner {
+  width: 100%;
+}
+.box-container .inner-header {
   text-align: center;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+.box-container .inner-header:hover {
+  text-decoration: underline;
+}
+.box-container h1 {
+  font-size: 24px;
+}
+.box-container .inner-content {
+  margin: 20px 0 10px 0;
+  padding: 10px;
+}
+.box-container .inner-content .list {
+  position: relative;
+}
+.box-container .inner-content .list::before,
+.box-container .inner-content .list::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.6);
+}
+.box-container .inner-content .list::before {
+  left: 0;
+  top: -20px;
+}
+.box-container .inner-content .list:after {
+  left: 0;
+  bottom: -20px;
+}
+.box-container .inner-content .list-item {
+  text-indent: 1em;
+  border-radius: 4px;
+  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all ease-in-out 0.4s;
+}
+.box-container .inner-content .list-item a {
+  color: #eee;
   display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+  line-height: 2;
+  transition: all ease-in-out 0.4s;
+}
+.box-container .inner-content .item-1:hover {
+  background: linear-gradient(90deg, #b9deed, rgba(255, 255, 255, 0.7));
+}
+.box-container .inner-content .item-1:hover a {
+  color: #333;
+}
+.box-container .inner-content .item-2 {
+  position: relative;
+  z-index: 2;
+}
+.box-container .inner-content .item-2::before {
+  content: '';
+  background: linear-gradient(90deg, #71bbe9, #f0f0f0);
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  left: 0;
+  border-radius: 4px;
+  transition: all 0.7s ease;
+}
+.box-container .inner-content .item-2:hover a {
+  color: #333;
+}
+.box-container .inner-content .item-2:hover::before {
+  width: 100%;
+}
+.box-container .inner-content .item-3 {
+  position: relative;
+  perspective: 500px;
+  width: 100%;
+  height: 32px;
+}
+.box-container .inner-content .item-3 .box {
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.box-container .inner-content .item-3 .box .over-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: linear-gradient(90deg, #c4b9ed, rgba(255, 255, 255, 0.7));
+  transform: translateY(100%);
+  color: #fff;
+  transition: all 0.6s ease;
+  border-radius: 4px;
+}
+.box-container .inner-content .item-3 .box:hover .layer {
+  transform: translateY(-100%) rotateX(90deg);
+  transform-origin: bottom center;
+  opacity: 0;
+}
+.box-container .inner-content .item-3 .box:hover .over-layer {
+  opacity: 1;
+  transform: translateY(0);
+}
+.box-container .inner-footer {
+  text-align: right;
+  font-size: 14px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
