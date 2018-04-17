@@ -12,16 +12,19 @@
         <div class="inner-content">
           <ul class="list">
             <li class="list-item item-1">
-              <a href="https://github.com/fridolph">» github</a>
+              <a target="_blank" href="https://github.com/fridolph">» github</a>
+            </li>
+            <li class="list-item item-1">
+              <nuxt-link to="/books">» books</nuxt-link>
             </li>
             <li class="list-item item-2">
-              <a href="https://fridolph.github.io">» Blog</a>
+              <a target="_blank" href="https://fridolph.github.io">» Blog</a>
             </li>
             <li class="list-item item-3">
               <div class="box">
-                <a href="#" class="layer">» Program</a>
+                <nuxt-link to="/programs">» Program</nuxt-link>
                 <div class="over-layer">
-                  <a href="#">» Program</a>
+                  <nuxt-link to="/programs">» Program</nuxt-link>
                 </div>
               </div>
             </li>
