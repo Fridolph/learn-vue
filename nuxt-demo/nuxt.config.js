@@ -57,11 +57,12 @@ module.exports = {
   },
   plugins: [
     { src: "./plugins/element-ui", ssr: true },
-    { src: "./plugins/particles", ssr: false }
+    { src: "./plugins/particles", ssr: false },
+    // { src: "./plugins/hotcss", ssr: false }
   ],
   css: [
-    "./assets/main.css",
-    "./assets/iconfont.css",
+    "./assets/css/main.css",
+    "./assets/css/iconfont.css",
     "element-ui/lib/theme-chalk/index.css"
   ]
 };
