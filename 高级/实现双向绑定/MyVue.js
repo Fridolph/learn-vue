@@ -14,6 +14,7 @@ class MyVue {
     this._compile(this.$el)
   }
 
+  
   _observe(obj) {
     let _this = this
     Object.keys(obj).forEach(key => {
