@@ -14,7 +14,7 @@ class MyVue {
     this._compile(this.$el)
   }
 
-  
+
   _observe(obj) {
     let _this = this
     Object.keys(obj).forEach(key => {
@@ -69,7 +69,7 @@ class MyVue {
       if (node.hasAttribute('v-model') && (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA')) {
         node.addEventListener('input', (function(key) {
           let attrVal = node.getAttribute('v-model')
-          _this._binding[attrVal]._directives.push(new Watcher(
+          _this._binding[attrVal]._directives.push(new M(
             'input',
             node,
             _this,
@@ -97,7 +97,7 @@ class MyVue {
   }
 }
 
-class Watcher {
+class M {
   constructor(name, el, vm, exp, attr) {
     this.name = name    // 指令名
     this.el = el        // 指令对应dom
