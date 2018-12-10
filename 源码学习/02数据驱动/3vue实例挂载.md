@@ -18,7 +18,7 @@ Vue.prototype.$mount = function(
   }
 
   const options = this.$options
-  // 解析模板/ el并转换为渲染功能
+  // 解析模板 / el并转换为渲染功能
   if (!options.render) {
     let template = options.template
     if (template) {
@@ -159,7 +159,7 @@ export function mountComponent(
 }
 ```
 
-从上， `mountComponent` 核心就是先调用 vm._render方法先生成虚拟Node, 再实例化一个渲染Watcher, 在它的回调中调用 updateComponent方法，最终调用vm._update更新dom
+从上， `mountComponent` 核心就是先调用 vm._render方法先生成虚拟Node, 再实例化一个渲染Watcher, 在它的回调中调用 updateComponent 方法，最终调用vm._update更新dom
 
 Watcher的作用有二：
 
