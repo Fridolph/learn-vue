@@ -380,3 +380,9 @@ function createComponent (vnode, insertedVnodeQueue, parentElm, refElm) {
 ## 总结
 
 那么到此，一个组件的 VNode 是如何创建、初始化、渲染的过程也就介绍完毕了。在对组件化的实现有一个大概了解后，接下来我们来介绍一下这其中的一些细节。我们知道编写一个组件实际上是编写一个 JavaScript 对象，对象的描述就是各种配置，之前我们提到在 _init 的最初阶段执行的就是 merge options 的逻辑，那么下一节我们从源码角度来分析合并配置的过程。
+
+---
+
+* patch的整体流程：createComponent -> 子组件初始化 -> 子组件render -> 子组件patch
+* activeInstance为当前激活的vm实例；vm.$vnode为组件的占位vnode；vm._vnode为组件的渲染vnode
+* 嵌套组件的插入顺序是先子后父
