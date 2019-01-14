@@ -23,6 +23,9 @@
         <li>
           <router-link to="/tree">实战 7：树形控件 —— Tree</router-link>
         </li>
+        <li>
+          <router-link to="/is-comp">实战 8：动态组件 —— is</router-link>
+        </li>
       </ul>
     </div>
     <hr>

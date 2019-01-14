@@ -16,22 +16,26 @@ export default new Router({
       path: '/display',
       component: () => import('./views/display.vue')
     },
-    // {
-    //   path: '/alert',
-    //   component: () => import('./views/alert.vue')
-    // },
-    // {
-    //   path: '/table-render',
-    //   component: () => import('./views/table-render.vue')
-    // },
-    // {
-    //   path: '/table-slot',
-    //   component: () => import('./views/table-slot.vue')
-    // },
-    // {
-    //   path: '/tree',
-    //   component: () => import('./views/tree.vue')
-    // },
+    {
+      path: '/alert',
+      component: () => import('./views/alert.vue')
+    },
+    {
+      path: '/table-render',
+      component: () => import('./views/table-render.vue')
+    },
+    {
+      path: '/table-slot',
+      component: () => import('./views/table-slot.vue')
+    },
+    {
+      path: '/is-comp',
+      component: () => import('./views/is-comp.vue')
+    },
+    {
+      path: '/tree',
+      component: () => import('./views/tree.vue')
+    },
     // {
     //   path: '/input-number',
     //   component: () => import('./views/input-number.vue')
